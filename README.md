@@ -7,7 +7,7 @@
 - [Module AWS ECS Fargate](https://github.com/EzzioMoreira/modulo-awsecs-fargate.git)
 - [Deploy WS ECS Fargate](https://github.com/EzzioMoreira/deploy-modulo-awsecs-fargate-.git)
 
-# 1.0: Deploy VPC infrastructure and ECS cluster.
+# Step 1.0: Deploy VPC infrastructure and ECS cluster.
 ### Requisites for running this project:
 - Git
 - Docker
@@ -15,7 +15,7 @@
 - Make
 - AWS CLI version 2
 
-### Step 1.1: Configure credential for AWS.
+### 1.1: Configure credential for AWS.
 Create .env file to AWS credentials with access key and secret key.
 ```shell
 # AWS environment
