@@ -1,5 +1,5 @@
 # DevOps Challenge/SRE
-![Diagram](https://github.com/EzzioMoreira/challenge-devops-sre/blob/main/img/diagram.jpeg)
+![Diagram](https://github.com/EzzioMoreira/challenge-devops-sre/blob/master/img/diagram.JPG)
 
 #### Repositories used in this project:
 - [Module Factory Floor](https://github.com/EzzioMoreira/module-factory-floor.git)
