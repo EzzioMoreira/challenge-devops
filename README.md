@@ -45,11 +45,11 @@ module "dev_cluster" {
 
 ### 1.3: Run the following commands to deploy:
 ```make
-make help          ## Run make help.
-terraform-init     ## Run terraform init to download all necessary plugins
-terraform-plan     ## Exec a terraform plan and puts it on a file called plano
-terraform-apply    ## Uses plano to apply the changes on AWS.
-terraform-destroy  ## Destroy all resources created by the terraform file in this repo.
+make help:          ## Run make help.
+terraform-init:     ## Run terraform init to download all necessary plugins
+terraform-plan:     ## Exec a terraform plan and puts it on a file called plano
+terraform-apply:    ## Uses plano to apply the changes on AWS.
+terraform-destroy:  ## Destroy all resources created by the terraform file in this repo.
 ```
 
 # Step 2.0: Deploy Container Image in AWS ECR:
@@ -68,11 +68,11 @@ AWS_SECRET_ACCESS_KEY=
 
 ### 2.3: Run the following commands to deploy:
 ```make
-make help          ## Run make help.
-ecr-build          ## ECR-step:1 Build your Docker image.
-ecr-login          ## ECR-step:2 Retrieve an authentication token and authenticate your Docker client to your registry.
-ecr-tag            ## ECR-step:3 Tag your image so you can push the image to this repository.
-ecr-push           ## ECR-step:4 Push this image to your newly created AWS repository.
+make help:          ## Run make help.
+ecr-build:          ## ECR-step:1 Build your Docker image.
+ecr-login:          ## ECR-step:2 Retrieve an authentication token and authenticate your Docker client to your registry.
+ecr-tag:            ## ECR-step:3 Tag your image so you can push the image to this repository.
+ecr-push:           ## ECR-step:4 Push this image to your newly created AWS repository.
 ```
 
 # Step 3.0: Deploy container in AWS ECS Fargate.
@@ -151,15 +151,15 @@ variable "AWS_ACCOUNT" {
 
 ### 3.5: Run the following commands to deploy:
 ```make
-make help          ## Run make help.
-terraform-init     ## Run terraform init to download all necessary plugins
-terraform-plan     ## Exec a terraform plan and puts it on a file called plano
-terraform-apply    ## Uses plano to apply the changes on AWS.
-terraform-destroy  ## Destroy all resources created by the terraform file in this repo.
+make help:          ## Run make help.
+terraform-init:     ## Run terraform init to download all necessary plugins
+terraform-plan:     ## Exec a terraform plan and puts it on a file called plano
+terraform-apply:    ## Uses plano to apply the changes on AWS.
+terraform-destroy:  ## Destroy all resources created by the terraform file in this repo.
 ```
 
 # Step 4.0: Deploy container in your desktop.
 ```make
-make help          ## Run make help.
-docker-run-local   ## Run the container on the local machine.
-docker-stop-local  ## Destroy the container on the local machine.
+make help:          ## Run make help.
+docker-run-local:   ## Run the container on the local machine.
+docker-stop-local:  ## Destroy the container on the local machine.
