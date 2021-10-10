@@ -1,28 +1,28 @@
 # DevOps Challenge/SRE
 ![Diagram](https://github.com/EzzioMoreira/challenge-devops-sre/blob/master/img/diagram.JPG)
 
-#### Repositories used in this project:
+### Repositories used in this project:
 - [Module Factory Floor](https://github.com/EzzioMoreira/module-factory-floor.git)
 - [Deploy Module Factory Floor ](https://github.com/EzzioMoreira/deploy-module-factory-floor.git)
 - [Module AWS ECS Fargate](https://github.com/EzzioMoreira/modulo-awsecs-fargate.git)
 - [Deploy WS ECS Fargate](https://github.com/EzzioMoreira/deploy-modulo-awsecs-fargate-.git)
 
 # 1.0: Deploy VPC infrastructure and ECS cluster.
-#### Requisites for running this project:
+### Requisites for running this project:
 - Git
 - Docker
 - Docker-compose
 - Make
 - AWS CLI version 2
 
-##### Step 1.1: Configure credential for AWS.
+### Step 1.1: Configure credential for AWS.
 Create .env file to AWS credentials with access key and secret key.
 ```shell
 # AWS environment
 AWS_ACCESS_KEY_ID=
 AWS_SECRET_ACCESS_KEY=
 ```
-#### 1.2: Create ECS cluster and network infrastructure.
+### 1.2: Create ECS cluster and network infrastructure.
 Create a terraform.tf file with the following contents. If you prefer, change the environment variable name.
 ```terraform
 provider "aws" {
@@ -43,7 +43,7 @@ module "dev_cluster" {
 }
 ``` 
 
-#### 1.3: Run the following commands to deploy:
+### 1.3: Run the following commands to deploy:
 ```make
 make help          ## Run make help.
 terraform-init     ## Run terraform init to download all necessary plugins
@@ -53,7 +53,7 @@ terraform-destroy  ## Destroy all resources created by the terraform file in thi
 ```
 
 # Step 2.0: Doploy Container Image in AWS ECR:
-##### 2.1 Configure credential for AWS.
+### 2.1 Configure credential for AWS.
 Create .env file to AWS credentials with access key and secret key.
 ```shell
 # AWS environment
@@ -61,12 +61,12 @@ AWS_ACCESS_KEY_ID=
 AWS_SECRET_ACCESS_KEY=
 ```
 
-##### 2.2: Configure your variables in Makefile file.
+### 2.2: Configure your variables in Makefile file.
 - AWS_ACCOUNT=you_account-id
 - APP_IMAGE=application_name
 - AWS_REGIO=you_aws_region
 
-#### 2.3: Run the following commands to deploy:
+### 2.3: Run the following commands to deploy:
 ```make
 make help          ## Run make help.
 ecr-build          ## ECR-step:1 Build your Docker image.
@@ -76,17 +76,17 @@ ecr-push           ## ECR-step:4 Push this image to your newly created AWS repos
 ```
 
 # Step 3.0: Deploy container in AWS ECS Fargate.
-#### Requisites for running this project:
+### Requisites for running this project:
 - Git
 - Docker
 - Docker-compose
 - Make
 - AWS CLI version 2
 
-#### 3.1: Clone the following repository:
+### 3.1: Clone the following repository:
 - [Deploy AWS ECS Fargate](https://github.com/EzzioMoreira/deploy-modulo-awsecs-fargate-.git)
 
-##### 3.2 Configure credential for AWS.
+### 3.2 Configure credential for AWS.
 Create .env file to AWS credentials with access key and secret key.
 ```shell
 # AWS environment
@@ -94,12 +94,12 @@ AWS_ACCESS_KEY_ID=
 AWS_SECRET_ACCESS_KEY=
 ```
 
-##### 3.3 Configure your variables in Makefile file.
+### 3.3 Configure your variables in Makefile file.
 - AWS_ACCOUNT=you_account-id
 - APP_IMAGE=application_name
 - AWS_REGIO=you_aws_region
 
-#### 3.4 Create Service, Task Definition and Application Load Balance.
+### 3.4 Create Service, Task Definition and Application Load Balance.
 Create a terraform.tf file with the following contents. If you prefer, change the variables name.
 ```terraform
 provider "aws" {
@@ -149,7 +149,7 @@ variable "AWS_ACCOUNT" {
 }
 ```
 
-#### 3.5: Run the following commands to deploy:
+### 3.5: Run the following commands to deploy:
 ```make
 make help          ## Run make help.
 terraform-init     ## Run terraform init to download all necessary plugins
