@@ -38,8 +38,25 @@ terraform {
 }
 
 module "dev_cluster" {
-  source        = "git@github.com:EzzioMoreira/module-factory-floor.git?ref=v1.0"
-  environment   = "development"
+  source         = "git@github.com:EzzioMoreira/module-factory-floor.git?ref=v1.1"
+  environment    = "development"
+  vpc_cidr_block = "10.10.0.0/16"
+}
+
+output "ecs_cluster_name" {
+  value = module.dev_cluster.ecs_cluster_name
+}
+
+output "vpc_id" {
+  value = module.dev_cluster.vpc_id
+}
+
+output "subnet_private" {
+  value = module.dev_cluster.subnet_private
+}
+
+output "subnet_public" {
+  value = module.dev_cluster.subnet_public
 }
 ``` 
 
