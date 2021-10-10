@@ -116,57 +116,7 @@ AWS_SECRET_ACCESS_KEY=
 - ```APP_IMAGE```=application_name
 - ```AWS_REGIO```=you_aws_region
 
-### 3.4 Create Service, Task Definition and Application Load Balance.
-Create a ```terraform.tf``` file with the following contents. If you prefer, change the variables name.
-```terraform
-provider "aws" {
-  region  = "us-east-2"
-  version = "= 3.0"
-}
-
-terraform {
-  backend "s3" {
-    bucket = "your-bucket-here"
-    key    = "key-terraform-.tfstate"
-    region = "us-east-2"
-  }
-} 
-
-module "app-deploy" {
-  source                 = "git@github.com:EzzioMoreira/modulo-awsecs-fargate.git?ref=v1.3"
-  containers_definitions = data.template_file.containers_definitions_json.rendered
-  environment            = "development"
-  app_name               = "website"
-  app_port               = "80"
-  fargate_version        = "1.4.0"
-}
-
-data "template_file" "containers_definitions_json" {
-  template = file("./containers_definitions.json")
-
-  vars = {
-    APP_VERSION = var.APP_VERSION
-    APP_IMAGE   = var.APP_IMAGE
-  }
-}
-
-variable "APP_VERSION" {
-    default   = "bead89c"
-    describle = "Get the value of variable GIT_COMMIT in Makefile."
-}
-
-variable "APP_IMAGE" {
-  default   = "website"
-  describle = "Get the value of variable APP_IMAGE in Makefile"
-}
-
-variable "AWS_ACCOUNT" {
-  default   = "520044189785"
-  describle = "Get the value of variable AWS_ACCOUNT in Makefile"
-}
-```
-
-### 3.5: Run the following commands to deploy:
+### 3.4: Run the following commands to deploy:
 ```make
 make help:          ## Run make help.
 terraform-init:     ## Run terraform init to download all necessary plugins
