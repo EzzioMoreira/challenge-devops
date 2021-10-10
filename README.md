@@ -87,7 +87,7 @@ ecr-push:           ## ECR-step:4 Push this image to your newly created AWS repo
 - [Deploy AWS ECS Fargate](https://github.com/EzzioMoreira/deploy-modulo-awsecs-fargate-.git)
 
 ### 3.2 Configure credential for AWS.
-Create .env file to AWS credentials with access key and secret key.
+Create ```.env``` file to AWS credentials with access key and secret key.
 ```shell
 # AWS environment
 AWS_ACCESS_KEY_ID=
@@ -95,9 +95,9 @@ AWS_SECRET_ACCESS_KEY=
 ```
 
 ### 3.3 Configure your variables in Makefile file.
-- AWS_ACCOUNT=you_account-id
-- APP_IMAGE=application_name
-- AWS_REGIO=you_aws_region
+- ```AWS_ACCOUNT```=you_account-id
+- ```APP_IMAGE```=application_name
+- ```AWS_REGIO```=you_aws_region
 
 ### 3.4 Create Service, Task Definition and Application Load Balance.
 Create a ```terraform.tf``` file with the following contents. If you prefer, change the variables name.
