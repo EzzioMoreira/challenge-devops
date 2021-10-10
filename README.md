@@ -16,14 +16,14 @@
 - AWS CLI version 2
 
 ### 1.1: Configure credential for AWS.
-Create .env file to AWS credentials with access key and secret key.
+Create ```.env``` file to AWS credentials with access key and secret key.
 ```shell
 # AWS environment
 AWS_ACCESS_KEY_ID=
 AWS_SECRET_ACCESS_KEY=
 ```
 ### 1.2: Create ECS cluster and network infrastructure.
-Create a terraform.tf file with the following contents. If you prefer, change the environment variable name.
+Create a ```terraform.tf``` file with the following contents. If you prefer, change the environment variable name.
 ```terraform
 provider "aws" {
   region  = "us-east-2"
@@ -52,9 +52,9 @@ terraform-apply    ## Uses plano to apply the changes on AWS.
 terraform-destroy  ## Destroy all resources created by the terraform file in this repo.
 ```
 
-# Step 2.0: Doploy Container Image in AWS ECR:
+# Step 2.0: Deploy Container Image in AWS ECR:
 ### 2.1 Configure credential for AWS.
-Create .env file to AWS credentials with access key and secret key.
+Create ```.env``` file to AWS credentials with access key and secret key.
 ```shell
 # AWS environment
 AWS_ACCESS_KEY_ID=
@@ -62,9 +62,9 @@ AWS_SECRET_ACCESS_KEY=
 ```
 
 ### 2.2: Configure your variables in Makefile file.
-- AWS_ACCOUNT=you_account-id
-- APP_IMAGE=application_name
-- AWS_REGIO=you_aws_region
+- ```AWS_ACCOUNT```=you_account-id
+- ```APP_IMAGE```=application_name
+- ```AWS_REGIO```=you_aws_region
 
 ### 2.3: Run the following commands to deploy:
 ```make
@@ -100,7 +100,7 @@ AWS_SECRET_ACCESS_KEY=
 - AWS_REGIO=you_aws_region
 
 ### 3.4 Create Service, Task Definition and Application Load Balance.
-Create a terraform.tf file with the following contents. If you prefer, change the variables name.
+Create a ```terraform.tf``` file with the following contents. If you prefer, change the variables name.
 ```terraform
 provider "aws" {
   region  = "us-east-2"
