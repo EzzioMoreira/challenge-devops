@@ -159,6 +159,10 @@ terraform-destroy:  ## Destroy all resources created by the terraform file in th
 ```
 
 # Step 4.0: Deploy container in your desktop.
+### 4.1: Clone the following repository:
+- [Deploy AWS ECS Fargate](https://github.com/EzzioMoreira/deploy-modulo-awsecs-fargate-.git)
+
+### 4.2: Run the following commands to deploy container:
 ```make
 make help:          ## Run make help.
 docker-run-local:   ## Run the container on the local machine.
