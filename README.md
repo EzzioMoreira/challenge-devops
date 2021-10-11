@@ -134,3 +134,4 @@ terraform-destroy:  ## Destroy all resources created by the terraform file in th
 make help:          ## Run make help.
 docker-run-local:   ## Run the container on the local machine.
 docker-stop-local:  ## Destroy the container on the local machine.
+  
